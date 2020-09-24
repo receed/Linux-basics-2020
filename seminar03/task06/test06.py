@@ -11,7 +11,7 @@ class Test6(unittest.TestCase):
             for line in lines:
                 strlen = len(line.split())
                 tmp = line + " " + str(strlen)
-                result.append(tmp.split())
+                result += tmp.split()
             f.close()
 
         return result
