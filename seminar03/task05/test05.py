@@ -21,7 +21,7 @@ class Test5(unittest.TestCase):
         print(script_name)
         p = subprocess.Popen(['bash', script_name, filename], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, _ = p.communicate()
-        stdout = stdout.decode('utf-8').split()
+        stdout = stdout.decode('utf-8').strip().split('\n')
 
         return stdout
         
