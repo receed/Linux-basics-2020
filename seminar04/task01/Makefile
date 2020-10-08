@@ -1,5 +1,11 @@
 
 SHELL := /bin/bash
+
+ifeq (time,$(firstword $(MAKECMDGOALS)))
+  ARGS := $(wordlist 2,3,$(MAKECMDGOALS))
+  $(eval $(ARGS):;@:)
+endif
+
 build_fast: src/main_fast.cpp
 	g++ src/main_fast.cpp src/fast.cpp -o fast
 
@@ -13,9 +19,11 @@ run_slow: build_slow
 	./slow $$(src/generator.sh)
 
 time: build_fast build_slow
-	time ./$(word 2,$(MAKECMDGOALS)) $$(src/generator.sh)
+	time ./$(ARGS)
 
-.PRONY: clean
+.PHONY: clean
 clean:
 	rm -f slow fast
+
+all: build_fast build_slow
 

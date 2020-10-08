@@ -5,7 +5,7 @@ import re
 def findWholeWord(w):
     return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
 
-TASK_COUNT = 7
+TASK_COUNT = 2
 completed_taks = 0
 
 for i in range(1, TASK_COUNT + 1):
