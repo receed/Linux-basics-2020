@@ -1,0 +1,49 @@
+1.
+
+$ ifconfig wlp2s0 | grep ether
+        ether d4:3b:04:5c:49:e6  txqueuelen 1000  (Ethernet)
+
+# ip link set dev wlp2s0 down 
+
+# ip link set dev wlp2s0 up 
+
+$  ping 8.8.8.8 -c1
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=111 time=6.18 ms
+
+--- 8.8.8.8 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 6.183/6.183/6.183/0.000 ms
+
+$ ping debian.org -c1
+PING debian.org (149.20.4.15) 56(84) bytes of data.
+64 bytes from mirror-isc3.debian.org (149.20.4.15): icmp_seq=1 ttl=56 time=292 ms
+
+--- debian.org ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 292.441/292.441/292.441/0.000 ms
+
+$ traceroute www.ubuntu.com
+traceroute to www.ubuntu.com (91.189.88.181), 30 hops max, 60 byte packets
+ 1  XiaoQiang (192.168.31.1)  1.614 ms  1.427 ms  1.297 ms
+ 2  vlan591.schevchenko.bb.pu.ru (81.89.176.1)  5.666 ms  5.496 ms  5.335 ms
+ 3  vlan3.kronos.pu.ru (195.70.196.3)  5.149 ms  4.980 ms  4.813 ms
+ 4  195.70.206.129 (195.70.206.129)  4.650 ms  4.488 ms  4.447 ms
+ 5  185.1.152.59 (185.1.152.59)  30.968 ms  30.785 ms  30.787 ms
+ 6  100ge8-2.core1.tll1.he.net (184.104.192.93)  30.623 ms  25.477 ms  25.189 ms
+ 7  100ge9-2.core1.sto1.he.net (184.104.192.81)  279.026 ms  237.336 ms  237.106 ms
+ 8  * * *
+ 9  100ge0-54.core1.ams2.he.net (184.104.192.130)  236.449 ms  236.271 ms  236.106 ms
+10  100ge0-31.core2.lon3.he.net (184.104.193.193)  235.944 ms  57.250 ms  57.036 ms
+11  184.104.203.50 (184.104.203.50)  56.866 ms  56.702 ms  56.539 ms
+12  davybones.canonical.com (91.189.88.181)  56.348 ms  60.387 ms  60.156 ms
+
+$ netstat -i
+Kernel Interface table
+Iface             MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+lo              65536    69729      0      0 0         69729      0      0      0 LRU
+virbr0           1500        0      0      0 0             0      0      0      0 BMU
+vmnet1           1500        0      0      0 0           167      0      0      0 BMRU
+vmnet8           1500        0      0      0 0           168      0      0      0 BMRU
+wlp2s0           1500  2970226      0      0 0        751410      0      0      0 BMRU
+
