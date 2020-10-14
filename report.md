@@ -93,7 +93,6 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 6.183/6.183/6.183/0.000 ms
 
-```
 $ ping debian.org -c1
 PING debian.org (149.20.4.15) 56(84) bytes of data.
 64 bytes from mirror-isc3.debian.org (149.20.4.15): icmp_seq=1 ttl=56 time=292 ms
@@ -133,3 +132,6 @@ vmnet8           1500        0      0      0 0           168      0      0      
 wlp2s0           1500  2970226      0      0 0        751410      0      0      0 BMRU
 ```
 
+2. [receed.github.com]
+
+3. (Сценарий)[./parse.sh]
