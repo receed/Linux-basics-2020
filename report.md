@@ -1,4 +1,5 @@
 1. Попинать утилиты
+```
 $ hostname
 MiWiFi-R4CM-srv
 
@@ -67,17 +68,23 @@ For more information on Whois status codes, please visit https://icann.org/epp
 Access to Public Interest Registry WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Public Interest Registry registry database. The data in this record is provided by Public Interest Registry for informational purposes only, and Public Interest Registry does not guarantee its accuracy. This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Public Interest Registry reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.
 
 The Registrar of Record identified in this output may have an RDDS service that can be queried for additional information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+```
 
 Определить MAC-адрес
+```
 $ ifconfig wlp2s0 | grep ether
         ether d4:3b:04:5c:49:e6  txqueuelen 1000  (Ethernet)
+```
 
 Отключить и включить обратно сетевой интерфейс
+```
 # ip link set dev wlp2s0 down 
 
 # ip link set dev wlp2s0 up 
+```
 
 Проверить доступность узлов 8.8.8.8, http://www.debian.org
+```
 $  ping 8.8.8.8 -c1
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_seq=1 ttl=111 time=6.18 ms
@@ -86,6 +93,7 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 6.183/6.183/6.183/0.000 ms
 
+```
 $ ping debian.org -c1
 PING debian.org (149.20.4.15) 56(84) bytes of data.
 64 bytes from mirror-isc3.debian.org (149.20.4.15): icmp_seq=1 ttl=56 time=292 ms
@@ -93,8 +101,10 @@ PING debian.org (149.20.4.15) 56(84) bytes of data.
 --- debian.org ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 292.441/292.441/292.441/0.000 ms
+```
 
 Отобразить трассу до узла http://www.ubuntu.com
+```
 $ traceroute www.ubuntu.com
 traceroute to www.ubuntu.com (91.189.88.181), 30 hops max, 60 byte packets
  1  XiaoQiang (192.168.31.1)  1.614 ms  1.427 ms  1.297 ms
@@ -109,8 +119,10 @@ traceroute to www.ubuntu.com (91.189.88.181), 30 hops max, 60 byte packets
 10  100ge0-31.core2.lon3.he.net (184.104.193.193)  235.944 ms  57.250 ms  57.036 ms
 11  184.104.203.50 (184.104.203.50)  56.866 ms  56.702 ms  56.539 ms
 12  davybones.canonical.com (91.189.88.181)  56.348 ms  60.387 ms  60.156 ms
+```
 
 Отобразить статистику работы сетевых интерфейсов
+```
 $ netstat -i
 Kernel Interface table
 Iface             MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
@@ -119,4 +131,5 @@ virbr0           1500        0      0      0 0             0      0      0      
 vmnet1           1500        0      0      0 0           167      0      0      0 BMRU
 vmnet8           1500        0      0      0 0           168      0      0      0 BMRU
 wlp2s0           1500  2970226      0      0 0        751410      0      0      0 BMRU
+```
 
