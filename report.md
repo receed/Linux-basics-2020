@@ -132,6 +132,6 @@ vmnet8           1500        0      0      0 0           168      0      0      
 wlp2s0           1500  2970226      0      0 0        751410      0      0      0 BMRU
 ```
 
-2. [receed.github.com]
+2. <receed.github.io>
 
-3. (Сценарий)[./parse.sh]
+3. [Сценарий](./parse.sh)
