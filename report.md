@@ -134,4 +134,7 @@ wlp2s0           1500  2970226      0      0 0        751410      0      0      
 
 2. [receed.github.io](https://receed.github.io/)
 
+3. [Action](./action.yml)
+
 4. [Сценарий](./parse.sh)
+
