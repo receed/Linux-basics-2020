@@ -1,1 +1,10 @@
-# print your commands
+$ sudo systemctl start docker
+$ sudo docker run -it haskell
+GHCi, version 8.10.2: https://www.haskell.org/ghc/  :? for help
+Prelude> 2+3
+5
+Prelude> print "Hello world"
+"Hello world"
+Prelude>
+Leaving GHCi.
+
